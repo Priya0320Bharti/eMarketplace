@@ -48,7 +48,7 @@ const Navbar = ()=> {
           >
             <path d="M96 0V47L48 94H0V47L48 0H96Z" />
           </svg>
-          Our Website
+          vox Market
         </a>
         {/* logo - end */}
         {/* nav - start */}
