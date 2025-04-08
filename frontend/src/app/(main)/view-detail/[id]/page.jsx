@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import { useCart } from '@/context/CartContext';
+import useVoiceContext from '@/context/VoiceContext';
 
 const ViewDetail = () => {
     const { id } = useParams();
@@ -10,21 +12,38 @@ const ViewDetail = () => {
     const [loading, setLoading] = useState(true); // Loading state for the product data
     const [error, setError] = useState(null); // Error state for handling API errors
 
-    // Formik setup (if needed later)
-    const productForm = useFormik({
-        initialValues: {
-            title: "",
-            description: "",
-            category: "",
-            price: "",
-            image: ""
-        },
-        onSubmit: (values) => {
-            console.log('Form values:', values);
-            // handle form submission here
-        }
-    });
+    const { addToCart, isInCart
+     } = useCart();
 
+    const {
+      transcript,
+      resetTranscript,
+      interpretVoiceCommand,
+      fillInputUsingVoice,
+      performActionUsingVoice,
+      finalTranscript,
+      voiceResponse,
+      voices,
+      triggerModal,
+      checkExistenceInTranscript,
+    } = useVoiceContext();
+  
+    useEffect(() => {
+      if (
+        finalTranscript.includes("add to cart") ||
+        finalTranscript.includes("add to cart") ||
+        finalTranscript.includes("add to card")
+      ) {
+        voiceResponse(`${productData.title} added to cart`);
+        addItemToCart(productData);
+        triggerModal(
+          "Product added to cart",
+          `${productData.title} added to cart`,
+          true,
+          <IconShoppingCartCopy size={50} />
+        );
+      }
+    }, [finalTranscript]);
     // Fetch product data from the API
     const getProductData = async () => {
         try {
@@ -236,12 +255,13 @@ const ViewDetail = () => {
         {/* shipping notice - end */}
         {/* buttons - start */}
         <div className="flex gap-2.5">
-          <a
-            href="#"
+          <button
+            onClick={() => addToCart(productData)}
+            disabled={isInCart(productData._id)}
             className="inline-block flex-1 rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 sm:flex-none md:text-base"
           >
             Add to cart
-          </a>
+          </button>
           <a
             href="#"
             className="inline-block rounded-lg bg-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
