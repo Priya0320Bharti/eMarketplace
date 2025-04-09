@@ -81,8 +81,8 @@ const Home = () => {
                       <span className="text-gray-500">by Fancy Brand</span>
                     </div>
                     <div className="flex flex-col items-end">
-                      <span className="font-bold text-gray-600 lg:text-lg">$19.99</span>
-                      <span className="text-sm text-red-500 line-through">$39.99</span>
+                      <span className="font-bold text-gray-600 lg:text-lg">₹1999</span>
+                      <span className="text-sm text-red-500 line-through">₹3999</span>
                     </div>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ const Home = () => {
                       <span className="text-gray-500">by Cool Brand</span>
                     </div>
                     <div className="flex flex-col items-end">
-                      <span className="font-bold text-gray-600 lg:text-lg">$29.99</span>
+                      <span className="font-bold text-gray-600 lg:text-lg">₹2999</span>
                     </div>
                   </div>
                 </div>
@@ -140,7 +140,7 @@ const Home = () => {
                       <span className="text-gray-500">by Nice Brand</span>
                     </div>
                     <div className="flex flex-col items-end">
-                      <span className="font-bold text-gray-600 lg:text-lg">$35.00</span>
+                      <span className="font-bold text-gray-600 lg:text-lg">₹3500</span>
                     </div>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ const Home = () => {
                       <span className="text-gray-500">by Lavish Brand</span>
                     </div>
                     <div className="flex flex-col items-end">
-                      <span className="font-bold text-gray-600 lg:text-lg">$49.99</span>
+                      <span className="font-bold text-gray-600 lg:text-lg">₹4999</span>
                     </div>
                   </div>
                 </div>
@@ -379,7 +379,7 @@ const Home = () => {
                       >
                         <path d="M96 0V47L48 94H0V47L48 0H96Z" />
                       </svg>
-                      Our Website
+                      VOX Market
                     </a>
                   </div>
                   {/* logo - end */}

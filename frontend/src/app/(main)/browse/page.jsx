@@ -287,7 +287,7 @@ const Browse = () => {
               </div>
               
               <Link href={'/view-detail/' + product._id}>
-                <div className="relative aspect-square overflow-hidden rounded-t-xl">
+                <div className="relative aspect-square overflow-hidden rounded-t-xl container">
                   <img
                     src={product.image}
                     alt={product.title}

@@ -68,6 +68,10 @@ const pageDetails = [
     pagePath: '/signup'
   },
   {
+    pageName: 'signup',
+    pagePath: '/signup'
+  },
+  {
     pageName: 'login',
     pagePath: '/login'
   },
@@ -85,19 +89,19 @@ const pageDetails = [
   },
   {
     pageName: 'browse',
-    pagePath: '/productView'
+    pagePath: '/browse'
   },
   {
     pageName: 'sellerdashboard',
     pagePath: '/seller/sellerdashboard'
   },
   {
-    pageName: 'addProduct',
-    pagePath: '/seller/addProduct'
+    pageName: 'add-product',
+    pagePath: '/admin/add-product'
   },
   {
-    pageName: 'manageProduct',
-    pagePath: '/seller/manageProduct'
+    pageName: 'manage-product',
+    pagePath: '/admin/manage-product'
   },
   {
     pageName: 'sellersignup',
@@ -126,6 +130,10 @@ const pageDetails = [
   {
     pageName: 'cheakout',
     pagePath: '/user/cheakout'
+  },
+  {
+    pageName: 'view-detail',
+    pagePath: '/view-detail\[id]'
   },
 ]
 
@@ -175,6 +183,13 @@ export const VoiceProvider = ({ children }) => {
       }
     },
     {
+      command: 'open sign up page',
+      callback: (pageName) => {
+        console.log('Opening page: ', pageName);
+        voicePageNavigator('signup')
+      }
+    },
+    {
       command: 'I want to login',
       callback: (pageName) => {
         console.log('Opening page: ', pageName);
@@ -196,6 +211,13 @@ export const VoiceProvider = ({ children }) => {
       }
     },
     {
+      command: 'mujhe kuchh kharidna hai',
+      callback: (pageName) => {
+        console.log('Opening page: ', pageName);
+        voicePageNavigator('browse')
+      }
+    },
+    {
       command: 'I want to contact you',
       callback: (pageName) => {
         console.log('Opening page: ', pageName);
@@ -206,7 +228,7 @@ export const VoiceProvider = ({ children }) => {
       command: 'open manage product page',
       callback: (pageName) => {
         console.log('Opening page: ', pageName);
-        voicePageNavigator('manageProduct')
+        voicePageNavigator('manage-Product')
       }
     },
     {
@@ -226,6 +248,13 @@ export const VoiceProvider = ({ children }) => {
     
     {
       command: 'open contact page',
+      callback: (pageName) => {
+        console.log('Opening page: ', pageName);
+        voicePageNavigator('contact')
+      }
+    },
+    {
+      command: 'mujhe aapse contact karna hai',
       callback: (pageName) => {
         console.log('Opening page: ', pageName);
         voicePageNavigator('contact')
@@ -270,14 +299,14 @@ export const VoiceProvider = ({ children }) => {
       command: 'open add product',
       callback: (pageName) => {
         console.log('Opening page: ', pageName);
-        voicePageNavigator('addProduct')
+        voicePageNavigator('add-product')
       }
     },
     {
-      command: 'open manage product',
+      command: 'open manage product page',
       callback: (pageName) => {
         console.log('Opening page: ', pageName);
-        voicePageNavigator('manageProduct')
+        voicePageNavigator('manage-product')
       }
     },
     {
@@ -301,13 +330,27 @@ export const VoiceProvider = ({ children }) => {
         voicePageNavigator('profile')
       }
     },
-    // {
-    //   command: 'open cart page',
-    //   callback: (pageName) => {
-    //     console.log('Opening page: ', pageName);
-    //     voicePageNavigator('MyCart')
-    //   }
-    // },
+    {
+      command: 'open cart page',
+      callback: (pageName) => {
+        console.log('Opening page: ', pageName);
+        voicePageNavigator('Cart')
+      }
+    },
+    {
+      command: 'open card page',
+      callback: (pageName) => {
+        console.log('Opening page: ', pageName);
+        voicePageNavigator('Cart')
+      }
+    },
+    {
+      command: 'show the first level of product',
+      callback: (pageName) => {
+        console.log('Opening page: ', pageName);
+        voicePageNavigator('view-detail')
+      }
+    },
     {
       command: 'show me products',
       callback: (pageName) => {
