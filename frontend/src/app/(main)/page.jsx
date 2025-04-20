@@ -1,3 +1,5 @@
+'use client';
+
 <div className="bg-white max-w-full mx-auto py-6 sm:py-8 lg:py-12">
                 <div className="mx-auto max-w-screen-xl px-4 md:px-8">
                     <div className="grid gap-8 md:grid-cols-2">

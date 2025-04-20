@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Navbar from '@/components/Navbar';
 import axios from 'axios';
 import Link from 'next/link';
