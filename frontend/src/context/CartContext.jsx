@@ -1,52 +1,73 @@
 'use client';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    // Load cart items from localStorage on mount
+    const savedCart = localStorage.getItem('cartItems');
+    if (savedCart) {
+      setCartItems(JSON.parse(savedCart));
+    }
+    setIsInitialized(true);
+  }, []);
+
+  useEffect(() => {
+    // Save to localStorage whenever cart changes
+    if (isInitialized) {
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+  }, [cartItems, isInitialized]);
 
   const addToCart = (product) => {
     setCartItems(prev => {
       const existing = prev.find(item => item._id === product._id);
       if (existing) {
-        toast.success('Item quantity updated in cart!');
-        return prev.map(item =>
+        const updated = prev.map(item =>
           item._id === product._id 
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
+        return updated;
       }
-      toast.success('Item added to cart!');
       return [...prev, { ...product, quantity: 1 }];
     });
+    // Move toast outside of setState
+    toast.success(existing ? 'Item quantity updated in cart!' : 'Item added to cart!');
   };
 
   const removeFromCart = (productId) => {
-    setCartItems(prev => {
-      toast.success('Item removed from cart');
-      return prev.filter(item => item._id !== productId);
-    });
+    setCartItems(prev => prev.filter(item => item._id !== productId));
+    toast.success('Item removed from cart');
   };
 
   const updateQuantity = (productId, newQuantity) => {
     if (newQuantity < 1) return;
-    setCartItems(prev => {
-      toast.success('Cart quantity updated');
-      return prev.map(item =>
+    setCartItems(prev => 
+      prev.map(item =>
         item._id === productId ? { ...item, quantity: newQuantity } : item
-      );
-    });
+      )
+    );
+    toast.success('Cart quantity updated');
   };
 
   const getCartTotal = () => {
     return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   };
 
-  const isInCart = (productId => {
+  const isInCart = (productId) => {
     return cartItems.some(item => item._id === productId);
-  });
+  };
+
+  // Don't render children until initialization is complete
+  if (!isInitialized) {
+    return null;
+  }
 
   return (
     <CartContext.Provider value={{ 
