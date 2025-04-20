@@ -128,8 +128,8 @@ const pageDetails = [
     pagePath: '/user/cart'
   },
   {
-    pageName: 'cheakout',
-    pagePath: '/user/cheakout'
+    pageName: 'checkout',
+    pagePath: '/user/checkout'
   },
   {
     pageName: 'view-detail',
@@ -243,7 +243,7 @@ export const VoiceProvider = ({ children }) => {
       }
     },
     {
-      command: 'open check out page',
+      command: 'open checkout page',
       callback: (pageName) => {
         console.log('Opening page: ', pageName);
         voicePageNavigator('checkout')
