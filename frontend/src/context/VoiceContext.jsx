@@ -243,10 +243,10 @@ export const VoiceProvider = ({ children }) => {
       }
     },
     {
-      command: 'open cheak out page',
+      command: 'open check out page',
       callback: (pageName) => {
         console.log('Opening page: ', pageName);
-        voicePageNavigator('cheakout')
+        voicePageNavigator('checkout')
       }
     },
     
