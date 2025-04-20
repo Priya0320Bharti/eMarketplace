@@ -137,8 +137,12 @@ const pageDetails = [
   },
 ]
 
-const speech = new SpeechSynthesisUtterance();
 const VoiceContext = createContext();
+
+let speech;
+if (typeof window !== 'undefined') {
+  speech = new SpeechSynthesisUtterance();
+}
 
 export const VoiceProvider = ({ children }) => {
 
