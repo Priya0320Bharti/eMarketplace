@@ -13,9 +13,10 @@ const Login  = () => {
     },
     onSubmit : (values)=>{
       console.log(values);
-      axios.post('http://localhost:5000/user/add', values)
+      axios.post('http://localhost:5000/user/authenticate', values)
       .then((result) => {
-        toast.success('User ragistered successfully');
+        toast.success('User loggedin successfully');
+        localStorage.setItem('user-token', result.data.token);
       }).catch((err) => {
         toast.error('somthing went wrong');
         console.log(err);

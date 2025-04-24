@@ -1,6 +1,7 @@
 const express=require('express')
 const UserRouter =require('./routers/userRouter');
 const ProductRouter= require('./routers/productRouter');
+const razorpayRouter= require('./routers/razorpayRouter');
 const cors = require('cors');
 
 const app=express();
@@ -17,6 +18,7 @@ app.use('/user',UserRouter);
 
 // middleware
 app.use('/product',ProductRouter);
+app.use('/razorpay',razorpayRouter);
 
 // endpoint or route
 app.get('/', ( req,res)=>{
