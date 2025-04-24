@@ -250,6 +250,14 @@ export const VoiceProvider = ({ children }) => {
         voicePageNavigator('checkout')
       }
     },
+
+    {
+      command: 'open check out page',
+      callback: (pageName) => {
+        console.log('Opening page: ', pageName);
+        voicePageNavigator('checkout')
+      }
+    },
     
     {
       command: 'open contact page',

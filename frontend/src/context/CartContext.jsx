@@ -26,19 +26,17 @@ export const CartProvider = ({ children }) => {
   }, [cartItems, isInitialized]);
 
   const addToCart = (product) => {
+    const existing = cartItems.find(item => item._id === product._id);
     setCartItems(prev => {
-      const existing = prev.find(item => item._id === product._id);
       if (existing) {
-        const updated = prev.map(item =>
+        return prev.map(item =>
           item._id === product._id 
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
-        return updated;
       }
       return [...prev, { ...product, quantity: 1 }];
     });
-    // Move toast outside of setState
     toast.success(existing ? 'Item quantity updated in cart!' : 'Item added to cart!');
   };
 

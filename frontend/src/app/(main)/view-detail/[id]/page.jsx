@@ -181,55 +181,57 @@ const ViewDetail = () => {
                                 <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
                                     Color
                                 </span>
-                                <div className="flex flex-wrap gap-2">
-                                    <span className="h-8 w-8 rounded-full border bg-gray-800 ring-2 ring-gray-800 ring-offset-1 transition duration-100" />
+                                <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
+                                    <span className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border bg-gray-800 ring-2 ring-gray-800 ring-offset-1 transition duration-100" />
                                     <button
                                         type="button"
-                                        className="h-8 w-8 rounded-full border bg-gray-500 ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                                        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border bg-gray-500 ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
                                     />
                                     <button
                                         type="button"
-                                        className="h-8 w-8 rounded-full border bg-gray-200 ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                                        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border bg-gray-200 ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
                                     />
                                     <button
                                         type="button"
-                                        className="h-8 w-8 rounded-full border bg-white ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                                        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border bg-white ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
                                     />
                                 </div>
                             </div>
                             {/* color - end */}
                             {/* size - start */}
-                            <div className="mb-8 md:mb-10">
-                                <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
-                                    Size
-                                </span>
-                                <div className="flex flex-wrap gap-3">
-                                    <button
-                                        type="button"
-                                        className="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
-                                    >
-                                        XS
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
-                                    >
-                                        S
-                                    </button>
-                                    <span className="flex h-8 w-12 cursor-default items-center justify-center rounded-md border border-indigo-500 bg-indigo-500 text-center text-sm font-semibold text-white">
-                                        M
+                            {productData.category.toLowerCase() === 'cloth' && (
+                                <div className="mb-8 md:mb-10">
+                                    <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
+                                        Size
                                     </span>
-                                    <button
-                                        type="button"
-                                        className="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
-                                    >
-                                        L
-                                    </button>
-                                    <span className="flex h-8 w-12 cursor-not-allowed items-center justify-center rounded-md border border-transparent bg-white text-center text-sm font-semibold text-gray-400">
-                                        XL
-                                    </span>
+                                    <div className="grid grid-cols-3 sm:grid-cols-5 md:flex md:flex-wrap gap-3">
+                                        <button
+                                            type="button"
+                                            className="flex h-10 w-full sm:w-16 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                                        >
+                                            XS
+                                        </button>
+                                        <button
+                                            type="button"
+                                            className="flex h-10 w-full sm:w-16 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                                        >
+                                            S
+                                        </button>
+                                        <span className="flex h-10 w-full sm:w-16 cursor-default items-center justify-center rounded-md border border-indigo-500 bg-indigo-500 text-center text-sm font-semibold text-white">
+                                            M
+                                        </span>
+                                        <button
+                                            type="button"
+                                            className="flex h-10 w-full sm:w-16 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                                        >
+                                            L
+                                        </button>
+                                        <span className="flex h-10 w-full sm:w-16 cursor-not-allowed items-center justify-center rounded-md border border-transparent bg-white text-center text-sm font-semibold text-gray-400">
+                                            XL
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                             {/* size - end */}
                             {/* price - start */}
                             <div className="mb-4">

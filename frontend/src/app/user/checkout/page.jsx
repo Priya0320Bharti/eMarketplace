@@ -195,7 +195,7 @@ export default function CheckoutPage() {
           expiry: '',
           cvv: '',
         }}
-        validationSchema={CheckoutSchema}
+        // validationSchema={CheckoutSchema}
         onSubmit={handleSubmit}
       >
         {({ values }) => (
