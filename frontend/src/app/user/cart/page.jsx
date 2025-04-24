@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { useCart } from '@/context/CartContext';
+import Link from 'next/link';
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
@@ -101,9 +102,9 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <button className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+            <Link href={'/user/checkout'} className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
               Check out
-            </button>
+            </Link>
           </div>
           {/* totals - end */}
         </div>
