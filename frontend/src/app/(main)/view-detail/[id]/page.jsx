@@ -181,19 +181,26 @@ const ViewDetail = () => {
                                 <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
                                     Color
                                 </span>
-                                <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
-                                    <span className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border bg-gray-800 ring-2 ring-gray-800 ring-offset-1 transition duration-100" />
+                                <div className="flex flex-wrap gap-3">
                                     <button
                                         type="button"
-                                        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border bg-gray-500 ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                                        className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-gray-800 ring-2 ring-gray-800 ring-offset-1 transition duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-800"
+                                        aria-label="Black color"
                                     />
                                     <button
                                         type="button"
-                                        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border bg-gray-200 ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                                        className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-gray-500 ring-2 ring-transparent ring-offset-1 transition duration-200 hover:scale-110 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                        aria-label="Gray color"
                                     />
                                     <button
                                         type="button"
-                                        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border bg-white ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                                        className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-gray-200 ring-2 ring-transparent ring-offset-1 transition duration-200 hover:scale-110 hover:ring-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                                        aria-label="Light gray color"
+                                    />
+                                    <button
+                                        type="button"
+                                        className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-white ring-2 ring-transparent ring-offset-1 transition duration-200 hover:scale-110 hover:ring-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                                        aria-label="White color"
                                     />
                                 </div>
                             </div>
@@ -204,31 +211,38 @@ const ViewDetail = () => {
                                     <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
                                         Size
                                     </span>
-                                    <div className="grid grid-cols-3 sm:grid-cols-5 md:flex md:flex-wrap gap-3">
+                                    <div className="flex flex-wrap gap-3">
                                         <button
                                             type="button"
-                                            className="flex h-10 w-full sm:w-16 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                                            className="min-w-[3rem] flex-1 sm:flex-none sm:w-16 h-10 items-center justify-center rounded-md border-2 bg-white px-2 py-1 text-center text-sm font-semibold text-gray-800 transition-all duration-200 hover:bg-gray-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-200 active:bg-gray-200"
                                         >
                                             XS
                                         </button>
                                         <button
                                             type="button"
-                                            className="flex h-10 w-full sm:w-16 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                                            className="min-w-[3rem] flex-1 sm:flex-none sm:w-16 h-10 items-center justify-center rounded-md border-2 bg-white px-2 py-1 text-center text-sm font-semibold text-gray-800 transition-all duration-200 hover:bg-gray-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-200 active:bg-gray-200"
                                         >
                                             S
                                         </button>
-                                        <span className="flex h-10 w-full sm:w-16 cursor-default items-center justify-center rounded-md border border-indigo-500 bg-indigo-500 text-center text-sm font-semibold text-white">
-                                            M
-                                        </span>
                                         <button
                                             type="button"
-                                            className="flex h-10 w-full sm:w-16 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                                            className="min-w-[3rem] flex-1 sm:flex-none sm:w-16 h-10 items-center justify-center rounded-md border-2 border-indigo-500 bg-indigo-500 px-2 py-1 text-center text-sm font-semibold text-white transition-all duration-200 hover:bg-indigo-600 hover:border-indigo-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                                        >
+                                            M
+                                        </button>
+                                        <button
+                                            type="button"
+                                            className="min-w-[3rem] flex-1 sm:flex-none sm:w-16 h-10 items-center justify-center rounded-md border-2 bg-white px-2 py-1 text-center text-sm font-semibold text-gray-800 transition-all duration-200 hover:bg-gray-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-200 active:bg-gray-200"
                                         >
                                             L
                                         </button>
-                                        <span className="flex h-10 w-full sm:w-16 cursor-not-allowed items-center justify-center rounded-md border border-transparent bg-white text-center text-sm font-semibold text-gray-400">
+                                        <button
+                                            type="button"
+                                            disabled
+                                            className="min-w-[3rem] flex-1 sm:flex-none sm:w-16 h-10 items-center justify-center rounded-md border-2 border-gray-200 bg-gray-100 px-2 py-1 text-center text-sm font-semibold text-gray-400 cursor-not-allowed"
+                                        >
                                             XL
-                                        </span>
+                                        </button>
                                     </div>
                                 </div>
                             )}
@@ -276,25 +290,27 @@ const ViewDetail = () => {
                                 >
                                     {isInCart(productData?._id) ? 'Already in Cart' : 'Add to Cart'}
                                 </button>
-                                <a
-                                    href="#"
-                                    className="inline-block rounded-lg bg-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
+                                <button
+                                    type="button"
+                                    className="group inline-flex items-center justify-center rounded-lg bg-white p-3 text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition-all duration-200 hover:bg-gray-100 hover:text-rose-500 focus:outline-none focus-visible:ring active:bg-gray-200 sm:p-4"
+                                    aria-label="Add to wishlist"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="h-6 w-6"
+                                        className="h-5 w-5 sm:h-6 sm:w-6 transition-transform duration-200 group-hover:scale-110 group-hover:fill-rose-500"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
+                                        strokeWidth={2}
                                     >
                                         <path
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
-                                            strokeWidth={2}
                                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                                         />
                                     </svg>
-                                </a>
+                                    <span className="sr-only">Add to wishlist</span>
+                                </button>
                             </div>
                             {/* buttons - end */}
                             {/* description - start */}

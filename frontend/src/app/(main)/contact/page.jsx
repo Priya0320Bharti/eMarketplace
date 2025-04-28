@@ -4,7 +4,8 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div>
+    <div className='min-h-screen bg-cover bg-center bg-no-repeat bg-gradient-to-r from-blue-50 to-indigo-50'>
+        <div className="container mx-auto py-12">
       <>
         {/* Contact Us */}
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -19,7 +20,7 @@ const Contact = () => {
             </div>
             <div className="mt-12 grid items-center lg:grid-cols-2 gap-6 lg:gap-16">
               {/* Card */}
-              <div className="flex flex-col border border-gray-200 rounded-xl p-4 sm:p-6 lg:p-8 dark:border-neutral-700">
+              <div className="flex flex-col border border-gray-200 rounded-xl p-4 sm:p-6 lg:p-8 dark:border-neutral-700 bg-white/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <h2 className="mb-8 text-xl font-semibold text-gray-800 dark:text-neutral-200">
                   Fill in the form
                 </h2>
@@ -28,33 +29,33 @@ const Contact = () => {
                     {/* Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="hs-firstname-contacts-1" className="sr-only">
+                        <label htmlFor="hs-firstname-contacts-1" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
                           First Name
                         </label>
                         <input
                           type="text"
                           name="hs-firstname-contacts-1"
                           id="hs-firstname-contacts-1"
-                          className="py-2.5 sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                          placeholder="First Name"
+                          className="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 bg-white/70 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500"
+                          placeholder="Enter your first name"
                         />
                       </div>
                       <div>
-                        <label htmlFor="hs-lastname-contacts-1" className="sr-only">
+                        <label htmlFor="hs-lastname-contacts-1" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
                           Last Name
                         </label>
                         <input
                           type="text"
                           name="hs-lastname-contacts-1"
                           id="hs-lastname-contacts-1"
-                          className="py-2.5 sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                          placeholder="Last Name"
+                          className="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 bg-white/70 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500"
+                          placeholder="Enter your last name"
                         />
                       </div>
                     </div>
                     {/* End Grid */}
                     <div>
-                      <label htmlFor="hs-email-contacts-1" className="sr-only">
+                      <label htmlFor="hs-email-contacts-1" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
                         Email
                       </label>
                       <input
@@ -62,47 +63,46 @@ const Contact = () => {
                         name="hs-email-contacts-1"
                         id="hs-email-contacts-1"
                         autoComplete="email"
-                        className="py-2.5 sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                        placeholder="Email"
+                        className="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 bg-white/70 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500"
+                        placeholder="Enter your email"
                       />
                     </div>
                     <div>
-                      <label htmlFor="hs-phone-number-1" className="sr-only">
+                      <label htmlFor="hs-phone-number-1" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
                         Phone Number
                       </label>
                       <input
                         type="text"
                         name="hs-phone-number-1"
                         id="hs-phone-number-1"
-                        className="py-2.5 sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                        placeholder="Phone Number"
+                        className="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 bg-white/70 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500"
+                        placeholder="Enter your phone number"
                       />
                     </div>
                     <div>
-                      <label htmlFor="hs-about-contacts-1" className="sr-only">
-                        Details
+                      <label htmlFor="hs-about-contacts-1" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
+                        Message
                       </label>
                       <textarea
                         id="hs-about-contacts-1"
                         name="hs-about-contacts-1"
                         rows={4}
-                        className="py-2.5 sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                        placeholder="Details"
-                        defaultValue={""}
+                        className="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 bg-white/70 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500"
+                        placeholder="Type your message here..."
                       />
                     </div>
                   </div>
                   {/* End Grid */}
-                  <div className="mt-4 grid">
+                  <div className="mt-6 grid">
                     <button
                       type="submit"
-                      className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                      className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none dark:focus:ring-offset-gray-800"
                     >
-                      Send inquiry
+                      Send message
                     </button>
                   </div>
                   <div className="mt-3 text-center">
-                    <p className="text-sm text-gray-500 dark:text-neutral-500">
+                    <p className="text-sm text-gray-600 dark:text-neutral-400">
                       We'll get back to you in 1-2 business days.
                     </p>
                   </div>
@@ -295,6 +295,7 @@ const Contact = () => {
         </div>
         {/* End Contact Us */}
       </>
+      </div>
     </div>
   )
 }

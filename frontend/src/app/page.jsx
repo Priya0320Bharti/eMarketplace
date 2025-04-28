@@ -6,6 +6,35 @@ import React, { useEffect, useState } from 'react'
 
 const Home = () => {
   const [masterList, setMasterList] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [
+    {
+      url: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070",
+      title: "Fashion Collection",
+      description: "Explore our latest fashion trends"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070",
+      title: "Accessories",
+      description: "Complete your look with our accessories"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2070",
+      title: "Summer Sale",
+      description: "Get up to 50% off on summer collection"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(timer);
+  }, []);
 
   const fetchProduct = () => {
     axios.get('http://localhost:5000/product/getall')
@@ -15,7 +44,6 @@ const Home = () => {
         setMasterList(res.data);
       }).catch((err) => {
         console.log(err);
-
       });
   }
 
@@ -28,18 +56,47 @@ const Home = () => {
       masterList.filter((product) => { return product.title.toLowerCase().includes(e.target.value.toLowerCase()) })
     )
   }
+
   return (
     <div>
       <Navbar />
       <section>
         <>
+        <div>
+          {/* Floating Image Carousel - start */}
+          {/* <div className="relative h-[300px] overflow-hidden mx-auto mt-8">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <div className="relative h-full">
+                  <img
+                    src={image.url}
+                    alt={image.title}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <h2 className="text-4xl font-bold mb-4">{image.title}</h2>
+                      <p className="text-xl">{image.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div> */}
+          {/* Floating Image Carousel - end */}
+
           {/* product-grid - start */}
           <div className="bg-white py-6 sm:py-8 lg:py-12">
             <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
               {/* text - start */}
               <div className="mb-10 md:mb-16">
-                <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-                  Selected
+                <h2 className="mb-4 text-center  text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+                  Some Outfits
                 </h2>
                 <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
                   This is a section of some simple filterd items that would might be help
@@ -228,7 +285,7 @@ const Home = () => {
                 {/* product - start */}
                 <div>
                   <a
-                    href="#"
+                    href="browse"
                     className="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg"
                   >
                     <img
@@ -249,7 +306,7 @@ const Home = () => {
                 {/* product - start */}
                 <div>
                   <a
-                    href="#"
+                    href="/browse"
                     className="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg"
                   >
                     <img
@@ -270,7 +327,7 @@ const Home = () => {
                 {/* product - start */}
                 <div>
                   <a
-                    href="#"
+                    href="/browse"
                     className="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg"
                   >
                     <img
@@ -291,7 +348,7 @@ const Home = () => {
                 {/* product - start */}
                 <div>
                   <a
-                    href="#"
+                    href="/browse"
                     className="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg"
                   >
                     <img
@@ -489,7 +546,7 @@ const Home = () => {
                   <nav className="flex flex-col gap-4">
                     <div>
                       <a
-                        href="#"
+                        href="/about"
                         className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                       >
                         About
@@ -538,7 +595,7 @@ const Home = () => {
                   <nav className="flex flex-col gap-4">
                     <div>
                       <a
-                        href="#"
+                        href="/contact"
                         className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                       >
                         Contact
@@ -611,8 +668,8 @@ const Home = () => {
             </footer>
           </div>
           {/* footer - end */}
+          </div>
         </>
-
       </section>
     </div>
   )

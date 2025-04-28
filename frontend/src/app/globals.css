@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #f3f4f6;  /* This is a light gray color that's easy on the eyes */
+}

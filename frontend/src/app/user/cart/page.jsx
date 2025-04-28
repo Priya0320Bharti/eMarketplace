@@ -8,7 +8,7 @@ const Cart = () => {
   const shipping = 4.99;
 
   return (
-    <div>
+    <div className="bg-gray-50 min-h-screen">
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="mx-auto max-w-screen-lg px-4 md:px-8">
           <div className="mb-6 sm:mb-10 lg:mb-16">
