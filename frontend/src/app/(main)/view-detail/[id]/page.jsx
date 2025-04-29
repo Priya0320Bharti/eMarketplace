@@ -177,36 +177,38 @@ const ViewDetail = () => {
                             </div>
                             {/* rating - end */}
                             {/* color - start */}
-                            <div className="mb-4 md:mb-6">
-                                <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
-                                    Color
-                                </span>
-                                <div className="flex flex-wrap gap-3">
-                                    <button
-                                        type="button"
-                                        className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-gray-800 ring-2 ring-gray-800 ring-offset-1 transition duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-800"
-                                        aria-label="Black color"
-                                    />
-                                    <button
-                                        type="button"
-                                        className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-gray-500 ring-2 ring-transparent ring-offset-1 transition duration-200 hover:scale-110 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500"
-                                        aria-label="Gray color"
-                                    />
-                                    <button
-                                        type="button"
-                                        className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-gray-200 ring-2 ring-transparent ring-offset-1 transition duration-200 hover:scale-110 hover:ring-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
-                                        aria-label="Light gray color"
-                                    />
-                                    <button
-                                        type="button"
-                                        className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-white ring-2 ring-transparent ring-offset-1 transition duration-200 hover:scale-110 hover:ring-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-100"
-                                        aria-label="White color"
-                                    />
+                            {productData.category.toLowerCase() !== 'sweet' && (
+                                <div className="mb-4 md:mb-6">
+                                    <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
+                                        Color
+                                    </span>
+                                    <div className="flex flex-wrap gap-3">
+                                        <button
+                                            type="button"
+                                            className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-gray-800 ring-2 ring-gray-800 ring-offset-1 transition duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-800"
+                                            aria-label="Black color"
+                                        />
+                                        <button
+                                            type="button"
+                                            className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-gray-500 ring-2 ring-transparent ring-offset-1 transition duration-200 hover:scale-110 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                            aria-label="Gray color"
+                                        />
+                                        <button
+                                            type="button"
+                                            className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-gray-200 ring-2 ring-transparent ring-offset-1 transition duration-200 hover:scale-110 hover:ring-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                                            aria-label="Light gray color"
+                                        />
+                                        <button
+                                            type="button"
+                                            className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 bg-white ring-2 ring-transparent ring-offset-1 transition duration-200 hover:scale-110 hover:ring-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                                            aria-label="White color"
+                                        />
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                             {/* color - end */}
                             {/* size - start */}
-                            {productData.category.toLowerCase() === 'cloth' && (
+                            {productData.category.toLowerCase() === 'cloth' && productData.category.toLowerCase() !== 'sweet' && (
                                 <div className="mb-8 md:mb-10">
                                     <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
                                         Size
@@ -282,6 +284,7 @@ const ViewDetail = () => {
                                 <button
                                     onClick={() => addItemToCart(productData)}
                                     disabled={isInCart(productData?._id)}
+                                    aria-label="Add to Cart"
                                     className={`inline-block flex-1 rounded-lg px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 sm:flex-none md:text-base ${
                                         isInCart(productData?._id)
                                             ? 'bg-gray-400 cursor-not-allowed'

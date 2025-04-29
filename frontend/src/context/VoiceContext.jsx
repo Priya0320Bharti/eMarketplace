@@ -365,6 +365,46 @@ export const VoiceProvider = ({ children }) => {
       }
     },
     {
+      command: 'add this item to my card',
+      callback: () => {
+        if (window.location.pathname.includes('view-detail')) {
+          console.log('Adding item to cart');
+          const addToCartBtn = document.querySelector('button[aria-label="Add to Cart"]');
+          if (addToCartBtn && !addToCartBtn.disabled) {
+            addToCartBtn.click();
+            voiceResponse('Item added to your cart');
+            triggerModal('Added to Cart', 'Item has been added to your cart');
+          } else {
+            voiceResponse('This item is already in your cart');
+            triggerModal('Already in Cart', 'This item is already in your cart');
+          }
+        } else {
+          voiceResponse('Please open a product first to add it to cart');
+          triggerModal('Error', 'Please open a product first to add it to cart');
+        }
+      }
+    },
+    {
+      command: 'add to cart',
+      callback: () => {
+        if (window.location.pathname.includes('view-detail')) {
+          console.log('Adding item to cart');
+          const addToCartBtn = document.querySelector('button[aria-label="Add to Cart"]');
+          if (addToCartBtn && !addToCartBtn.disabled) {
+            addToCartBtn.click();
+            voiceResponse('Item added to your cart');
+            triggerModal('Added to Cart', 'Item has been added to your cart');
+          } else {
+            voiceResponse('This item is already in your cart');
+            triggerModal('Already in Cart', 'This item is already in your cart');
+          }
+        } else {
+          voiceResponse('Please open a product first to add it to cart');
+          triggerModal('Error', 'Please open a product first to add it to cart');
+        }
+      }
+    },
+    {
       command: 'show me products',
       callback: (pageName) => {
         router.push('/productView');
