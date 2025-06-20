@@ -113,7 +113,7 @@ const Signup = () => {
                                         htmlFor="name"
                                         className="block text-sm mb-2 dark:text-white"
                                     >
-                                        Your Name
+                                        Full Name
                                     </label>
                                     <div className="relative">
                                         <input
